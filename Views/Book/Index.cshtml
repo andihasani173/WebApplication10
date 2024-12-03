@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MLB.Models.Book>
+
+<h1>Lista e Librave</h1>
+
+<form method="get">
+    <div class="row m-3">
+        <div class="col">
+            <label for="searchTitle">Kërko sipas Titullit:</label>
+            <input type="text" name="searchTitle" id="searchTitle" />
+        </div>
+        <div class="col">
+            <label for="searchAuthor">Kërko sipas Autorit:</label>
+            <input type="text" name="searchAuthor" id="searchAuthor" />
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Kërko</button>
+        </div>
+    </div> 
+    <hr/>
+</form>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publication Year</th>
+            <th>ISBN</th>
+            <th>Genre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Id</td>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.PublicationYear</td>
+                <td>@book.ISBN</td>
+                <td>@book.Genre</td>
+            </tr>
+        }
+    </tbody>
+</table>
