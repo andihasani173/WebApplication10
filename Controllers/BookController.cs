@@ -41,7 +41,6 @@ namespace MLB.Controllers
                 books = books.Where(b => b.Author.ToLower().Contains(searchAuthor.ToLower()));
             }
 
-
             return View(books.ToList());
         }
     }
